@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7663E4C-C5F4-4D26-8F1C-A32A34E3D1E5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ExpenseTrackingSystem</RootNamespace>
+    <AssemblyName>ExpenseTrackingSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.8.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.8\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="guna.ui">
+      <HintPath>C:\WINDOWS\microsoft.net\framework\v2.0.50727\guna.ui.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Category.cs" />
+    <Compile Include="Controls\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ClassCategory.cs" />
+    <Compile Include="Controls\ClassCategory.Designer.cs">
+      <DependentUpon>ClassCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Interface\Classes\airtime.cs" />
+    <Compile Include="Data\Interface\Classes\clothes.cs" />
+    <Compile Include="Data\database.cs" />
+    <Compile Include="Data\Interface\Classes\education.cs" />
+    <Compile Include="Data\Interface\Classes\food.cs" />
+    <Compile Include="Data\Interface\Classes\taxes.cs" />
+    <Compile Include="Data\Interface\iExpenses.cs" />
+    <Compile Include="Data\Models\categories.cs" />
+    <Compile Include="Data\category.cs" />
+    <Compile Include="Data\Models\expenses.cs" />
+    <Compile Include="Data\Models\users.cs" />
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmScreensplash.cs" />
+    <Compile Include="Forms\FrmScreensplash.designer.cs">
+      <DependentUpon>FrmScreensplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlashScreen.cs" />
+    <Compile Include="FlashScreen.designer.cs">
+      <DependentUpon>FlashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScreensplash.cs" />
+    <Compile Include="FrmScreensplash.designer.cs">
+      <DependentUpon>FrmScreensplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmCategories.cs" />
+    <Compile Include="Pages\FrmCategories.Designer.cs">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmDashboardPage.cs" />
+    <Compile Include="Pages\FrmDashboardPage.Designer.cs">
+      <DependentUpon>FrmDashboardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmExpensePage.cs" />
+    <Compile Include="Pages\FrmExpensePage.Designer.cs">
+      <DependentUpon>FrmExpensePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmReportsPage.cs" />
+    <Compile Include="Pages\FrmReportsPage.Designer.cs">
+      <DependentUpon>FrmReportsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmTransactions.cs" />
+    <Compile Include="Pages\FrmTransactions.Designer.cs">
+      <DependentUpon>FrmTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ClassCategory.resx">
+      <DependentUpon>ClassCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmScreensplash.resx">
+      <DependentUpon>FrmScreensplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegister.resx">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlashScreen.resx">
+      <DependentUpon>FlashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScreensplash.resx">
+      <DependentUpon>FrmScreensplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmCategories.resx">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmDashboardPage.resx">
+      <DependentUpon>FrmDashboardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmExpensePage.resx">
+      <DependentUpon>FrmExpensePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmReportsPage.resx">
+      <DependentUpon>FrmReportsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmTransactions.resx">
+      <DependentUpon>FrmTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_list_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_list_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_user_male_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_user_male_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_outlined_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_chip_card_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_dashboard_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_decrease_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_down_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_drop_down_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_histogram_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_histogram_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_histogram_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_increase_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_increase_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_increase_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_investment_portfolio_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_logout_rounded_left_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_mastercard_logo_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minimum_value_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minus_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_money_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_multiply_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_plus_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_plus_math_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_plus_math_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_report_file_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_scales_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_token_card_code_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_token_card_code_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trash_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trash_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trash_red_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_up_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_up_squared_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_money_light_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_increase_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_decrease_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_mastercard_logo_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_scales_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_histogram_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minimum_value_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_up_squared_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trash_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minus_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_outlined_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_multiply_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_dashboard_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_down_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_token_card_code_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_chip_card_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_report_file_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_logout_rounded_left_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_plus_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_plus_482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trash_red_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minus_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
